@@ -15,6 +15,14 @@ pipeline {
                 }
             }
         }
+        stage('Check Python') {
+            steps {
+                script {
+                    echo 'Checking Python and Pip Version...'
+                    sh 'python -m pip --version'
+                }
+            }
+        }
         stage('Lint Code') {
             steps {
                 // Lint code
